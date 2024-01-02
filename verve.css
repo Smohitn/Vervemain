@@ -1,3 +1,32 @@
+@media screen and (max-width: 767px) {
+  .about-text {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    line-height: 1.5; /* Adjust line height for better readability */
+  }
+}
+
+/* Small Our Services Images */
+.portfolio-card img {
+  width: 100%; /* Ensure images take up the full width of the container */
+  height: auto; /* Maintain image aspect ratio */
+}
+
+/* Pre Adoption and Post Adoption Alignment */
+.exp {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within */
+}
+
+/* Overlapping Elements */
+.overlay {
+  z-index: 1; /* Ensure overlays are above other elements */
+  margin-bottom: 20px; /* Add space between elements */
+}
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   padding: 0;
