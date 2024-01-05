@@ -177,15 +177,15 @@
 
   
     let Signout = ()=>{
-      sessionStorage.removeItem("user-creds");
-        sessionStorage.removeItem("user-info");
+      localStorage.removeItem("user-creds");
+        localStorage.removeItem("user-info");
         window.location.href = 'login.html'
 
     }
 
 
     let CheckCred = ()=>{
-        if (!sessionStorage.getItem("user-creds"))
+        if (!localStorage.getItem("user-creds"))
         window.location = 'login.html'
 
         
