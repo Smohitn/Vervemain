@@ -44,6 +44,11 @@
     }
 
     /* Add more styles as needed */
+    @media only screen and (max-width:768px){
+        #Mainform{
+            width: 100% !important;
+        }
+    }
 </style>
 
 <body>
@@ -64,7 +69,7 @@
         </div>
 
         <button type="submit" style="float: right;" class="btn btn-primary"> Sign IN</button>
-        <a href="signup.html"> <button type="button" style="float: right;" class="btn btn-primary me-2 "> Sign
+        <a href="signupnew.html"> <button type="button" style="float: right;" class="btn btn-primary me-2 "> Sign
                 UP</button> </a>
 
     </form>
@@ -75,24 +80,21 @@
         <script type="module">
            
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
             import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
             import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
           
             const firebaseConfig = {
-               apiKey: "AIzaSyDHEnzlWdkgbwrMpHUi983ahz8A6-hrEgM",
+              apiKey: "AIzaSyDHEnzlWdkgbwrMpHUi983ahz8A6-hrEgM",
               authDomain: "verve-b7b1e.firebaseapp.com",
               databaseURL: "https://verve-b7b1e-default-rtdb.firebaseio.com",
               projectId: "verve-b7b1e",
-             storageBucket: "verve-b7b1e.appspot.com",
-             messagingSenderId: "1010301827333",
-             appId: "1:1010301827333:web:2258ff05b2be5ef5485f6c",
-            measurementId: "G-01H8SSLSHQ"
+              storageBucket: "verve-b7b1e.appspot.com",
+              messagingSenderId: "1010301827333",
+              appId: "1:1010301827333:web:2258ff05b2be5ef5485f6c"
             };
 
 
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
         const db = getDatabase();
         const auth = getAuth(app);
         const dbref = ref(db);
@@ -110,13 +112,14 @@
                     console.log(credentials);
                     get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot) => {
                         if (snapshot.exists) {
-                            localStorage.setItem("user-info", JSON.stringify({
+                            sessionStorage.setItem("user-info", JSON.stringify({
 
                                 firstname: snapshot.val().firstname,
                                 lastname: snapshot.val().lastname,
                             }))
-                            localStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                            sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
                             window.location.href = 'index.html'
+                            
                         }
                     })
 
