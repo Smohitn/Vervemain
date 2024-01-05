@@ -83,23 +83,21 @@
         <script type="module">
            
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
             import { getDatabase,set, ref } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
             import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
           
             const firebaseConfig = {
-            apiKey: "AIzaSyDHEnzlWdkgbwrMpHUi983ahz8A6-hrEgM",
-            authDomain: "verve-b7b1e.firebaseapp.com",
-            databaseURL: "https://verve-b7b1e-default-rtdb.firebaseio.com",
-            projectId: "verve-b7b1e",
-           storageBucket: "verve-b7b1e.appspot.com",
-           messagingSenderId: "1010301827333",
-           appId: "1:1010301827333:web:2258ff05b2be5ef5485f6c",
-           measurementId: "G-01H8SSLSHQ"
+              apiKey: "AIzaSyDHEnzlWdkgbwrMpHUi983ahz8A6-hrEgM",
+              authDomain: "verve-b7b1e.firebaseapp.com",
+              databaseURL: "https://verve-b7b1e-default-rtdb.firebaseio.com",
+              projectId: "verve-b7b1e",
+              storageBucket: "verve-b7b1e.appspot.com",
+              messagingSenderId: "1010301827333",
+              appId: "1:1010301827333:web:2258ff05b2be5ef5485f6c"
             };
 
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+
         const db = getDatabase();
         const auth = getAuth(app);
 
@@ -119,8 +117,8 @@
                         lastname: LnameInp.value,
 
                     })
-                 
-                    alert('Account created successfully! Please Sign IN');
+                    alert('Account created successfully! Please proceed to the login page.');
+
                 })
 
                 .catch((error) => {
